@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sorry Nidhi 🥺</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ffe4ec, #fff6f8, #e8f0ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      color: #333;
+    }
+
+    .card {
+      width: 90%;
+      max-width: 650px;
+      padding: 35px 25px;
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(15px);
+      border-radius: 28px;
+      box-shadow: 0 15px 45px rgba(0,0,0,0.12);
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      animation: appear 1.2s ease;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(40px) scale(.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .emoji {
+      font-size: 60px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      50% { transform: translateY(-10px); }
+    }
+
+    h1 {
+      margin: 15px 0;
+      font-size: 34px;
+      color: #e85d75;
+    }
+
+    .typing {
+      min-height: 30px;
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 25px;
+    }
+
+    .message {
+      line-height: 1.8;
+      font-size: 17px;
+    }
+
+    .highlight {
+      color: #e85d75;
+      font-weight: bold;
+    }
+
+    button {
+      margin-top: 28px;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 30px;
+      background: #e85d75;
+      color: white;
+      font-size: 17px;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(232,93,117,.3);
+      transition: .3s;
+    }
+
+    button:hover {
+      transform: scale(1.07);
+    }
+
+    #reply {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #e85d75;
+      display: none;
+      animation: appear .6s ease;
+    }
+
+    .heart {
+      position: fixed;
+      bottom: -30px;
+      font-size: 20px;
+      animation: float 7s linear infinite;
+      opacity: .7;
+    }
+
+    @keyframes float {
+      from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+      20% { opacity: .8; }
+      to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    footer {
+      margin-top: 25px;
+      font-size: 14px;
+      color: #888;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+
+    <div class="emoji">🥺</div>
+
+    <h1>I'm Sorry, Nidhi</h1>
+
+    <div class="typing" id="typing"></div>
+
+    <div class="message">
+
+      <p>
+        Okay… meri galti hai. 😭
+      </p>
+
+      <br>
+
+      <p>
+        Main <span class="highlight">bahut der tak so gaya</span>
+        aur isi wajah se aap gussa ho gayi.
+      </p>
+
+      <br>
+
+      <p>
+        Mera intention aapko ignore karna ya upset karna
+        bilkul nahi tha. Bas neend ne mujhe aaj
+        completely defeat kar diya. 😭😂
+      </p>
+
+      <br>
+
+      <p>
+        But honestly…
+        <span class="highlight">I'm genuinely sorry. ❤️</span>
+      </p>
+
+      <br>
+
+      <p>
+        Aapko wait karwana ya bura feel karwana
+        meri intention kabhi nahi thi.
+      </p>
+
+      <br>
+
+      <p>
+        Ab please thoda sa gussa kam kar do na… 🥺🌷
+      </p>
+
+      <button onclick="forgive()">
+        Maaf kiya? 🥺
+      </button>
+
+      <div id="reply">
+        Yesss! 😭❤️ Thank you Nidhi! 🌷
+      </div>
+
+      <footer>
+        — The idiot who slept way too much 😭
+      </footer>
+
+    </div>
+  </div>
+
+  <script>
+
+    // Typing animation
+    const text = "Ek chhoti si sorry… dil se. 🥺";
+    let i = 0;
+
+    function typingEffect() {
+      if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typingEffect, 70);
+      }
+    }
+
+    typingEffect();
+
+
+    // Floating hearts
+    const hearts = ["❤️", "💗", "💖", "🌷", "✨", "🥺"];
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (5 + Math.random() * 4) + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 9000);
+    }
+
+    setInterval(createHeart, 700);
+
+
+    // Forgiveness button
+    function forgive() {
+      document.getElementById("reply").style.display = "block";
+
+      for (let i = 0; i < 15; i++) {
+        setTimeout(createHeart, i * 100);
+      }
+    }
+
+  </script>
+
+</body>
+</html>
