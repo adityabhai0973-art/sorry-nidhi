@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nidhi Ji 💗</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffe6f0, #e8e0ff);
+      font-family: Arial, sans-serif;
+    }
+
+    .card {
+      background: white;
+      padding: 35px 25px;
+      border-radius: 25px;
+      text-align: center;
+      width: 80%;
+      max-width: 400px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      color: #ff4f81;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 19px;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .btn {
+      margin-top: 15px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 20px;
+      background: #ff4f81;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #reply {
+      display: none;
+      margin-top: 20px;
+      color: #ff4f81;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>Nidhi Ji 💗</h1>
+
+    <p>
+      Pleaseee Nidhi ji 🥺<br>
+      Aapka practical complete kar lo na.
+      <br><br>
+      Pehle practical complete, phir aaram se baaki sab 😭
+      <br><br>
+      <b>Please maan jao ji 🫶</b>
+    </p>
+
+    <button class="btn" onclick="showMessage()">Theek Hai 😭</button>
+
+    <div id="reply">
+      Yesss! Ab jao practical complete karo 😭😂
+    </div>
+  </div>
+
+  <script>
+    function showMessage() {
+      document.getElementById("reply").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
